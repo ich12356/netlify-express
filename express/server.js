@@ -1,22 +1,53 @@
-'use strict';
-const express = require('express');
-const path = require('path');
-const serverless = require('serverless-http');
+"use strict";
+const express = require("express");
+const path = require("path");
+const serverless = require("serverless-http");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
+const axios = require("axios");
+
+require("dotenv").config();
 
 const router = express.Router();
-router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.end();
+router.get("/", (req, res) => {
+	res.sendFile(path.join(__dirname + "/index.html"));
 });
-router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-router.post('/', (req, res) => res.json({ postBody: req.body }));
 
 app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use("/", express.static(__dirname + "/public"));
+app.use(
+	"/js",
+	express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js"))
+); // redirect bootstrap JS
+app.use(
+	"/js",
+	express.static(path.join(__dirname, "../node_modules/jquery/dist"))
+); // redirect JS jQuery
+
+app.post("/addEmail", async (req, res) => {
+	try {
+		const response = await axios.post(
+			"https://api.sendinblue.com/v3/contacts",
+			{
+				email: req.body.email,
+				listIds: [7],
+			},
+			{
+				headers: {
+					Accept: "*/*",
+					"Content-Type": "application/json",
+					"api-key": process.env.API_KEY,
+				},
+			}
+		);
+
+		res.send(response.data);
+	} catch (err) {
+		console.log(err);
+		res.status(400).send(err);
+	}
+});
 
 module.exports = app;
 module.exports.handler = serverless(app);
