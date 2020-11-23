@@ -10,7 +10,7 @@ require("dotenv").config();
 
 const router = express.Router();
 router.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname + "/express/public/index.html"));
+	res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
 app.use(bodyParser.json());
