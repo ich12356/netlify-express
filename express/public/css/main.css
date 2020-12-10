@@ -1,7 +1,21 @@
-figcaption.badge {
+a:focus,
+.nav-link:focus,
+button:focus,
+.btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+span.badge {
   position: absolute;
-  right: 10px;
-  top: -10px;
+  top: 0;
+  right: 0;
+  -webkit-transform: translate(0, -35%);
+          transform: translate(0, -35%);
   border-radius: 50%;
   white-space: normal;
   width: 90px;
@@ -9,13 +23,12 @@ figcaption.badge {
   padding: 10px;
 }
 
-figcaption.badge * {
+span.badge * {
   position: relative;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  margin: 0;
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
 }
 
 .figure-caption {
@@ -61,4 +74,74 @@ img.rounded-circle {
 .input-group {
   width: 640px;
   max-width: 90%;
+}
+
+#page-header .row aside {
+  position: relative;
+}
+
+#page-header .row aside img:nth-of-type(2) {
+  display: none;
+}
+
+#information-section aside img {
+  top: 90px;
+}
+
+#impressum,
+#datenschutz {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+@media (max-width: 991.98px) {
+  #page-header .row aside img:nth-of-type(1) {
+    display: none;
+  }
+  #page-header .row aside img:nth-of-type(2) {
+    display: block;
+  }
+  #page-header .row aside span.badge {
+    -webkit-transform: translate(20%, -30%);
+            transform: translate(20%, -30%);
+    width: 75px;
+    height: 75px;
+    padding: 8px;
+  }
+  #page-header .row aside span.badge * {
+    font-size: 0.9rem;
+  }
+  .custom-list-style li {
+    font-size: 1rem;
+  }
+  .custom-list-style li::before {
+    margin-right: 0.6em;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #page-header .row section h1 {
+    font-size: 2.25rem;
+  }
+  #page-header .row aside {
+    display: none;
+  }
+  #information-section aside img {
+    height: 250px;
+  }
+  #tipps aside img {
+    height: 250px;
+  }
+  #tipps div ul {
+    text-align: center;
+  }
+  #sample-collect-section .jumbotron h1 {
+    font-size: 2rem;
+  }
+  #sample-collect-section .jumbotron p {
+    font-size: 1rem;
+  }
 }

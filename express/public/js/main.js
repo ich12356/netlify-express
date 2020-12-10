@@ -1,13 +1,13 @@
 // JQuery Smooth Scroll Animation
-$(".nav-link").on("click", function (e) {
-	if (this.hash !== "") {
+$("a").on("click", function (e) {
+	if (this.hash !== "" && this.hash.charAt(0) === "#") {
 		e.preventDefault();
 
 		const hash = this.hash;
 
 		$("html, body").animate(
 			{
-				scrollTop: $(hash).offset().top - 150,
+				scrollTop: $(hash).offset().top - 100,
 			},
 			1500
 		);
