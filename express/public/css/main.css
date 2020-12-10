@@ -140,7 +140,7 @@ img.rounded-circle {
 @media (max-width: 767.98px) {
   #page-header {
     height: auto;
-    padding: 5rem 0;
+    padding: 1rem 0 5rem;
   }
   #page-header .row {
     -webkit-box-orient: vertical;

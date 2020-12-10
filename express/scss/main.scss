@@ -154,7 +154,7 @@ img.rounded-circle {
 @include media-breakpoint-down(sm) {
 	#page-header {
 		height: auto;
-		padding: 5rem 0;
+		padding: 1rem 0 5rem;
 
 		.row {
 			flex-direction: column;
