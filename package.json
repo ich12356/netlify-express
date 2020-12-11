@@ -1,26 +1,27 @@
 {
   "name": "netlify-express",
   "version": "0.0.1",
-  "description": "Example of how to deploy a Express.js Netlify app.",
+  "description": "Website of Jann Wawerek",
   "main": "functions/server.js",
   "scripts": {
     "dev": "nodemon server-local.js",
-    "build": "netlify-lambda build express"
+    "build": "netlify-lambda build express",
+    "start": "node server-local.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neverendingqs/netlify-express.git"
+    "url": "git+https://github.com/ich12356/netlify-express.git"
   },
   "keywords": [
     "netlify",
     "express.js"
   ],
-  "author": "neverendingqs",
+  "author": "Tom Wawerek",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/neverendingqs/netlify-express/issues"
+    "url": "https://github.com/ich12356/netlify-express/issues"
   },
-  "homepage": "https://github.com/neverendingqs/netlify-express#readme",
+  "homepage": "https://github.com/ich12356/netlify-express#readme",
   "dependencies": {
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",

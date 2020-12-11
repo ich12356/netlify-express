@@ -9,13 +9,7 @@ require("dotenv").config();
 const app = express();
 const router = express.Router();
 
-router.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname + "/public/index.html"));
-});
-
-app.use(bodyParser.json());
-app.use("/.netlify/functions/server", router); // path must route to lambda
-app.use("/", express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(
 	"/js",
 	express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js"))
@@ -25,7 +19,11 @@ app.use(
 	express.static(path.join(__dirname, "../node_modules/jquery/dist"))
 ); // redirect JS jQuery
 
-app.post("/addEmail", async (req, res) => {
+router.get("/", (req, res) => {
+	res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
+router.post("/addEmail", async (req, res) => {
 	try {
 		const response = await axios.post(
 			"https://api.sendinblue.com/v3/contacts",
@@ -48,6 +46,9 @@ app.post("/addEmail", async (req, res) => {
 		res.status(400).send(err);
 	}
 });
+
+app.use(bodyParser.json());
+app.use("/.netlify/functions/server", router); // path must route to lambda
 
 module.exports = app;
 module.exports.handler = serverless(app);
