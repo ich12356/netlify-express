@@ -1,5 +1,5 @@
 // JQuery Smooth Scroll Animation
-$("a").on("click", function (e) {
+$("a.nav-link").on("click", function (e) {
 	if (this.hash !== "" && this.hash.charAt(0) === "#") {
 		e.preventDefault();
 

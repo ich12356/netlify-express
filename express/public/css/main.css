@@ -31,15 +31,6 @@ span.badge * {
           transform: translate(-50%, -60%);
 }
 
-.figure-caption {
-  position: absolute;
-  bottom: -1.2em;
-  left: 0;
-  font-size: 1.6rem;
-  line-height: 110%;
-  width: 100%;
-}
-
 img.rounded-circle {
   -o-object-fit: cover;
      object-fit: cover;
@@ -73,7 +64,7 @@ img.rounded-circle {
 
 .input-group {
   width: 640px;
-  max-width: 90%;
+  max-width: 95%;
 }
 
 #page-header {
@@ -86,38 +77,28 @@ img.rounded-circle {
   position: relative;
 }
 
-#page-header .row aside img:nth-of-type(2) {
-  display: none;
-}
-
 #information-section aside img {
   top: 90px;
 }
 
 #impressum,
 #datenschutz {
-  overflow-wrap: break-word;
-  word-break: break-word;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
 }
 
 @media (max-width: 991.98px) {
-  #main-navigation li {
-    padding: 10px;
+  #impressum h1,
+  #datenschutz h1 {
+    font-size: 1.8rem;
+  }
+  #impressum h2,
+  #datenschutz h2 {
+    font-size: 1.4rem;
   }
   #main-navigation li:not(:first-of-type) {
     border-top: 1px solid lightgrey;
-  }
-  #main-navigation a.btn {
-    display: none;
-  }
-  #page-header .row aside img:nth-of-type(1) {
-    display: none;
-  }
-  #page-header .row aside img:nth-of-type(2) {
-    display: block;
   }
   #page-header .row aside span.badge {
     -webkit-transform: translate(20%, -30%);
@@ -129,18 +110,23 @@ img.rounded-circle {
   #page-header .row aside span.badge * {
     font-size: 0.9rem;
   }
-  #page-header .custom-list-style li {
+  .custom-list-style li {
     font-size: 1rem;
   }
-  #page-header .custom-list-style li::before {
+  .custom-list-style li::before {
     margin-right: 0.6em;
+  }
+  #information-section h1 {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 767.98px) {
+  h1 {
+    font-size: 2rem;
+  }
   #page-header {
     height: auto;
-    padding: 1rem 0 5rem;
   }
   #page-header .row {
     -webkit-box-orient: vertical;
@@ -168,27 +154,21 @@ img.rounded-circle {
   #page-header .row aside img {
     height: 300px;
   }
-  #page-header .row aside img:nth-of-type(1) {
-    display: block;
-  }
-  #page-header .row aside img:nth-of-type(2) {
-    display: none;
-  }
   #page-header .row aside span.badge {
     -webkit-transform: translate(-5px, -10%);
             transform: translate(-5px, -10%);
   }
+  #information-section h1 {
+    font-size: 1.8rem;
+  }
   #information-section aside img {
     height: 250px;
   }
+  #lernen h3 {
+    font-size: 1.4rem;
+  }
   #tipps aside img {
     height: 250px;
-  }
-  #tipps div ul {
-    text-align: center;
-  }
-  #sample-collect-section .jumbotron h1 {
-    font-size: 2rem;
   }
   #sample-collect-section .jumbotron p {
     font-size: 1rem;

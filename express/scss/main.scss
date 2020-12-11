@@ -32,15 +32,6 @@ span.badge {
 	}
 }
 
-.figure-caption {
-	position: absolute;
-	bottom: -1.2em;
-	left: 0;
-	font-size: 1.6rem;
-	line-height: 110%;
-	width: 100%;
-}
-
 img.rounded-circle {
 	object-fit: cover;
 	object-position: -50% 0;
@@ -74,7 +65,7 @@ img.rounded-circle {
 
 .input-group {
 	width: 640px;
-	max-width: 90%;
+	max-width: 95%;
 }
 
 #page-header {
@@ -84,10 +75,6 @@ img.rounded-circle {
 
 	.row aside {
 		position: relative;
-
-		img:nth-of-type(2) {
-			display: none;
-		}
 	}
 }
 
@@ -97,64 +84,64 @@ img.rounded-circle {
 
 #impressum,
 #datenschutz {
-	overflow-wrap: break-word;
-	word-break: break-word;
 	hyphens: auto;
 }
 
 @include media-breakpoint-down(md) {
-	#main-navigation {
-		li {
-			padding: 10px;
-
-			&:not(:first-of-type) {
-				border-top: 1px solid lightgrey;
-			}
+	#impressum,
+	#datenschutz {
+		h1 {
+			font-size: 1.8rem;
 		}
-		a.btn {
-			display: none;
+
+		h2 {
+			font-size: 1.4rem;
+		}
+	}
+
+	#main-navigation {
+		li:not(:first-of-type) {
+			border-top: 1px solid lightgrey;
 		}
 	}
 
 	#page-header {
-		.row aside {
-			img {
-				&:nth-of-type(1) {
-					display: none;
-				}
+		.row aside span.badge {
+			transform: translate(20%, -30%);
+			width: 75px;
+			height: 75px;
+			padding: 8px;
 
-				&:nth-of-type(2) {
-					display: block;
-				}
-			}
-			span.badge {
-				transform: translate(20%, -30%);
-				width: 75px;
-				height: 75px;
-				padding: 8px;
-
-				* {
-					font-size: 0.9rem;
-				}
+			* {
+				font-size: 0.9rem;
 			}
 		}
+	}
 
-		.custom-list-style {
-			li {
-				font-size: 1rem;
+	.custom-list-style {
+		li {
+			font-size: 1rem;
 
-				&::before {
-					margin-right: 0.6em;
-				}
+			&::before {
+				margin-right: 0.6em;
 			}
+		}
+	}
+
+	#information-section {
+		h1 {
+			font-size: 2rem;
 		}
 	}
 }
 
 @include media-breakpoint-down(sm) {
+	h1 {
+		font-size: 2rem;
+	}
+
 	#page-header {
 		height: auto;
-		padding: 1rem 0 5rem;
 
 		.row {
 			flex-direction: column;
@@ -174,14 +161,6 @@ img.rounded-circle {
 
 				img {
 					height: 300px;
-
-					&:nth-of-type(1) {
-						display: block;
-					}
-
-					&:nth-of-type(2) {
-						display: none;
-					}
 				}
 				span.badge {
 					transform: translate(-5px, -10%);
@@ -190,27 +169,27 @@ img.rounded-circle {
 		}
 	}
 
-	#information-section aside img {
-		height: 250px;
+	#information-section {
+		h1 {
+			font-size: 1.8rem;
+		}
+
+		aside img {
+			height: 250px;
+		}
+	}
+
+	#lernen h3 {
+		font-size: 1.4rem;
 	}
 
 	#tipps {
 		aside img {
 			height: 250px;
 		}
-
-		div {
-			ul {
-				text-align: center;
-			}
-		}
 	}
 
 	#sample-collect-section .jumbotron {
-		h1 {
-			font-size: 2rem;
-		}
-
 		p {
 			font-size: 1rem;
 		}
