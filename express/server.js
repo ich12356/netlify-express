@@ -12,11 +12,11 @@ const router = express.Router();
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
 	"/js",
-	express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js"))
+	express.static(path.join(__dirname, "/node_modules/bootstrap/dist/js"))
 ); // redirect bootstrap JS
 app.use(
 	"/js",
-	express.static(path.join(__dirname, "../node_modules/jquery/dist"))
+	express.static(path.join(__dirname, "/node_modules/jquery/dist"))
 ); // redirect JS jQuery
 
 router.get("/", (req, res) => {
