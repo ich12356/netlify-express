@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
 	if (input.value.trim() == "") return;
 
 	const XHR = new XMLHttpRequest();
-	XHR.open("POST", "/addEmail");
+	XHR.open("POST", "/.netlify/functions/server/addEmail");
 	XHR.setRequestHeader("Content-Type", "application/json");
 	XHR.send(JSON.stringify({ email: input.value.trim() }));
 
