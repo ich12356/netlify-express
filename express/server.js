@@ -1,15 +1,16 @@
 "use strict";
 const express = require("express");
-const path = require("path");
-const serverless = require("serverless-http");
-const app = express();
-const bodyParser = require("body-parser");
 const axios = require("axios");
-
+const serverless = require("serverless-http");
+const bodyParser = require("body-parser");
+const path = require("path");
 require("dotenv").config();
 
+const app = express();
 const router = express.Router();
-router.get("/", (req, res) => {
+
+// router.get("/", (req, res) => {
+app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
@@ -49,5 +50,5 @@ app.post("/addEmail", async (req, res) => {
 	}
 });
 
-// module.exports = app;
+module.exports = app;
 module.exports.handler = serverless(app);
