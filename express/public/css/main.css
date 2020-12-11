@@ -97,7 +97,7 @@ img.rounded-circle {
   #datenschutz h2 {
     font-size: 1.4rem;
   }
-  #main-navigation li:not(:first-of-type) {
+  #mainNav li:not(:first-of-type) {
     border-top: 1px solid lightgrey;
   }
   #page-header .row aside span.badge {
