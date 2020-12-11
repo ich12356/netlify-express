@@ -9,8 +9,7 @@ require("dotenv").config();
 const app = express();
 const router = express.Router();
 
-// router.get("/", (req, res) => {
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
