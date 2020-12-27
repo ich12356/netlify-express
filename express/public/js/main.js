@@ -20,6 +20,7 @@ amzButtons.forEach((btn) => {
 		gtag("event", "view_item", {
 			event_label: "Amazon Button",
 			event_category: "engagement",
+			value: 1,
 		});
 	});
 });
