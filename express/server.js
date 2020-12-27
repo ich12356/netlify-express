@@ -4,7 +4,6 @@ const axios = require("axios");
 const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const path = require("path");
-require("dotenv").config();
 
 const app = express();
 const router = express.Router();
@@ -35,7 +34,8 @@ router.post("/addEmail", async (req, res) => {
 				headers: {
 					Accept: "*/*",
 					"Content-Type": "application/json",
-					"api-key": process.env.API_KEY,
+					"api-key":
+						"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",
 				},
 			}
 		);

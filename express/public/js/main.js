@@ -13,3 +13,13 @@ $("a.nav-link").on("click", function (e) {
 		);
 	}
 });
+
+const amzButtons = document.querySelectorAll(".amz-btn");
+amzButtons.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		gtag("event", "view_item", {
+			event_label: "Amazon Button",
+			event_category: "engagement",
+		});
+	});
+});
